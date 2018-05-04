@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    int OudGetal = 0;
+    int NieuwGetal = 1;
+}
+
+<h2>Index</h2>
+
+@{ 
+   
+    <h3>Fibonacci rij</h3>
+    <p>@OudGetal</p>
+    <p>@NieuwGetal</p>
+
+    while(NieuwGetal < 90)
+    {
+        NieuwGetal = OudGetal + NieuwGetal;
+        OudGetal = NieuwGetal - OudGetal;
+        <p>@NieuwGetal</p>
+    }
+
+
+   
+}
