@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVCVoorbeeld2.Models;
 
 namespace MVCVoorbeeld2.Controllers
 {
@@ -35,6 +36,28 @@ namespace MVCVoorbeeld2.Controllers
             ViewBag.ingetiktwoord = woord;
 
             return View();
+        }
+
+        [ActionName("Lijst")]
+        public ActionResult AlleWerknemers()
+        {
+            var werknemers = new List<Werknemer>();
+
+            werknemers.Add(new Werknemer
+            {
+                Voornaam = "Steven",
+                Wedde = 1000,
+                InDienst = DateTime.Today
+            });
+
+            werknemers.Add(new Werknemer
+            {
+                Voornaam = "Prosper",
+                Wedde = 1000,
+                InDienst = DateTime.Today.AddDays(2)
+            });
+
+            return View("AlleWerknemers" ,werknemers);
         }
     }
 }

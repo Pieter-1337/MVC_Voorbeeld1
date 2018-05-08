@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E4FC1352-CAED-40E5-8AD7-4400D3EFC09E}</ProjectGuid>
+    <ProjectGuid>{56ED9A3C-2846-4232-8D91-36E09A16F509}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCVoorbeeld2</RootNamespace>
-    <AssemblyName>MVCVoorbeeld2</AssemblyName>
+    <RootNamespace>MVC_Voorbeeld3</RootNamespace>
+    <AssemblyName>MVC_Voorbeeld3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -142,14 +142,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FiliaalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\WerknemerController.cs" />
+    <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DisplayFormatDataAttribute.cs" />
-    <Compile Include="Models\Persoon.cs" />
-    <Compile Include="Models\Werknemer.cs" />
+    <Compile Include="Models\Eigenaar.cs" />
+    <Compile Include="Services\FiliaalService.cs" />
+    <Compile Include="Services\HoofdZetelService.cs" />
+    <Compile Include="Models\Filiaal.cs" />
+    <Compile Include="Models\HoofdZetel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,11 +162,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\eigendom.png" />
+    <Content Include="Images\gehuurd.png" />
+    <Content Include="Images\ster.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Code\MyHelpers.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -189,10 +197,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Werknemer\Index.cshtml" />
-    <Content Include="Views\Werknemer\Palindroom.cshtml" />
-    <Content Include="Views\Werknemer\AlleWerknemers.cshtml" />
-    <Content Include="Views\Shared\_AndereLayout.cshtml" />
+    <Content Include="Views\Filiaal\Index.cshtml" />
+    <Content Include="Views\Filiaal\HoofdZetel.cshtml" />
+    <Content Include="Views\Filiaal\Filialen.cshtml" />
+    <Content Include="Views\Filiaal\FilialenVanaf2Miljoen.cshtml" />
+    <Content Include="Views\Time\ShowTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\sterretjes.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Eigenaar.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -226,9 +238,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>25336</DevelopmentServerPort>
+          <DevelopmentServerPort>27167</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:25336/</IISUrl>
+          <IISUrl>http://localhost:27167/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

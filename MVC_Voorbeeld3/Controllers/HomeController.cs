@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MVCVoorbeeld2.Models;
 
-namespace MVCVoorbeeld2.Controllers
+namespace MVC_Voorbeeld3.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View(new Persoon {Voornaam = "Eddy", Familienaam = "Wally" });
+            return View();
         }
 
         public ActionResult About()
