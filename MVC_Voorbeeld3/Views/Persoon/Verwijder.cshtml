@@ -1,0 +1,13 @@
+﻿@model MVC_Voorbeeld3.Models.Persoon
+
+@{
+    ViewBag.Title = "Verwijder";
+}
+
+<h2>@ViewBag.Title @Model.Voornaam @Model.Familienaam</h2>
+
+@using (Html.BeginForm())
+{
+<button type="submit">Verwijder</button>
+<a href="@Url.Action("Index")">Cancel</a>
+}

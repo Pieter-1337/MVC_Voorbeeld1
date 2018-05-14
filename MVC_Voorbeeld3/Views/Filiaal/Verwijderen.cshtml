@@ -1,0 +1,21 @@
+﻿@model MVC_Voorbeeld3.Models.Filiaal
+
+
+@{
+    ViewBag.Title = "Verwijderen";
+}
+
+<h2>@Model.Naam Verwijderen</h2>
+
+<p>@Html.LabelFor(m => m.Naam) : @Model.Naam</p>
+<p>@Html.LabelFor(m => m.Eigenaar) : @Model.Eigenaar</p>
+<p>@Html.LabelFor(m => m.Gebouwd) : @Model.Gebouwd</p>
+<p>@Html.LabelFor(m => m.Waarde) : @Model.Waarde</p>
+
+
+
+@using (Html.BeginForm())
+{
+    <button type="submit">Verwijderen</button>
+    <a href="@Url.Action("Index")">Cancel</a>
+}

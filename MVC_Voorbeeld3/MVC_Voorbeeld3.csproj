@@ -144,16 +144,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FiliaalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersoonController.cs" />
     <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Eigenaar.cs" />
+    <Compile Include="Models\Geslacht.cs" />
+    <Compile Include="Models\Persoon.cs" />
     <Compile Include="Services\FiliaalService.cs" />
     <Compile Include="Services\HoofdZetelService.cs" />
     <Compile Include="Models\Filiaal.cs" />
     <Compile Include="Models\HoofdZetel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PersoonService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -165,6 +169,7 @@
     <Content Include="Images\eigendom.png" />
     <Content Include="Images\gehuurd.png" />
     <Content Include="Images\ster.png" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -206,6 +211,10 @@
     <Content Include="Views\Shared\DisplayTemplates\Eigenaar.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
     <Content Include="Views\Home\Wissen.cshtml" />
+    <Content Include="Views\Filiaal\Verwijderen.cshtml" />
+    <Content Include="Views\Persoon\Index.cshtml" />
+    <Content Include="Views\Persoon\Verwijder.cshtml" />
+    <Content Include="Views\Persoon\Toevoegen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

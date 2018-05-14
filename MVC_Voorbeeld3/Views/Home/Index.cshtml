@@ -2,8 +2,13 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron"> 
-    <h1>Cookies</h1> 
-    <p class="lead">@ViewBag.Tijdstip</p>
-    <p> <a href="~/Home/Wissen" class="btn btn-primary btn-lg">Cookie wissen &raquo;</a> </p> 
+<div class="jumbotron">
+    @*<h1>Cookies</h1>
+        <p class="lead">@ViewBag.Tijdstip</p>
+        <p> <a href="~/Home/Wissen" class="btn btn-primary btn-lg">Cookie wissen &raquo;</a> </p>*@
+
+    <h1>Session State</h1>
+    <p class="lead">Welkom, dit is jouw @Session["aantalBezoeken"]e bezoek</p>
+    <p class="lead">Deze pagina werd in totaal reeds @HttpContext.Current.Application["aantalBezoeken"] keer bezocht.</p>
+    <p><a href="~/Home/Wissen" class="btn btn-primary btn-lg">Application & Sessionvariabele wissen &raquo;</a> </p>
 </div>
