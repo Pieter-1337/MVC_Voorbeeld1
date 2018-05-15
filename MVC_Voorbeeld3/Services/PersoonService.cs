@@ -37,5 +37,11 @@ namespace MVC_Voorbeeld3.Services
             persoon.ID = personen.Keys.Max() + 1;
             personen.Add(persoon.ID, persoon);
         }
+
+        public void Edit(Persoon persoon)
+        {
+            personen[persoon.ID] = persoon;
+           
+        }
     }
 }

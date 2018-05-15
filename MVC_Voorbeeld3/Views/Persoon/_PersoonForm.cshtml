@@ -1,0 +1,91 @@
+﻿
+@model MVC_Voorbeeld3.Models.Persoon
+@using MVC_Voorbeeld3.Models;
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.ValidationSummary("Volgende zaken werden niet correct ingevuld: ", new { @class = "alert alert-danger" });
+}
+
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Voornaam)
+                @Html.TextBoxFor(m => m.Voornaam, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Voornaam, "", new { @class = "alert-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Familienaam)
+                @Html.TextBoxFor(m => m.Familienaam, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Familienaam, "", new { @class = "alert-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Score)
+                @Html.TextBoxFor(m => m.Score, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Wedde)
+                @Html.TextBoxFor(m => m.Wedde, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Wedde, "", new { @class = "alert-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Paswoord)
+                @Html.TextBoxFor(m => m.Paswoord, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Paswoord, "", new { @class = "alert-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.HerhaalPaswoord)
+                @Html.TextBoxFor(m => m.HerhaalPaswoord, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.HerhaalPaswoord, "", new { @class = "alert-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Geboren)
+                @Html.TextBoxFor(m => m.Geboren, "{0:d}", new { @class = "form-control datepicker" })
+                @Html.ValidationMessageFor(m => m.Geboren, "", new { @class = "alert-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Gehuwd)
+                @Html.CheckBoxFor(m => m.Gehuwd, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Geslacht)
+                @Html.DropDownListFor(m => m.Geslacht, new SelectList(new[] { Geslacht.Man, Geslacht.Vrouw }), new { @class = "form-control" })
+            </div>
+
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Opmerkingen)
+                @Html.TextAreaFor(m => m.Opmerkingen, new { @class = "form-control form-control-text-area" })
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-12">
+            <br />
+            <br />
+            <div class="pad-top">
+                <button type="submit" class="btn btn-success btn-lg margin-right">
+                    <span class="glyphicon glyphicon-save"></span> Toevoegen
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </a>
+            </div>
+        </div>
+    }
+</div>

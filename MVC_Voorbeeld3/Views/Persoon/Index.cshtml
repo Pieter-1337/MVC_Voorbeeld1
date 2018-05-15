@@ -30,6 +30,7 @@
             <th>Opmerkingen</th>
             <th>Geslacht</th>
             <th>Verwijderen</th>
+            <th>Wijzigen</th>
         </tr>
     </thead>
 
@@ -48,11 +49,14 @@
                 <td>@Html.DisplayFor(m => persoon.Opmerkingen)</td>
                 <td>@Html.DisplayFor(m => persoon.Geslacht)</td>
                 <td>
-                    <a href="@Url.Action("Verwijder", new { id = persoon.ID})"><p>Verwijder</p></a>
+                    <a href="@Url.Action("Verwijder", new { id = persoon.ID})"><p class="btn btn-danger">Verwijder</p></a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Wijzigen", new { id = persoon.ID})"><p class="btn btn-warning">Wijzig</p></a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a href="@Url.Action("Toevoegen", new { @class = "btn btn-warning"})">Voeg Nieuwe persoon toe</a>
+<a href="@Url.Action("Toevoegen")"><p class="btn btn-success">Voeg Nieuwe persoon toe</p></a>

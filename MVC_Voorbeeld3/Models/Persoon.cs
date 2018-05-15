@@ -25,9 +25,15 @@ namespace MVC_Voorbeeld3.Models
         public decimal Wedde { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Gelieve een wachtwoord in te geven")]
+        [StringLength(maximumLength: 20, MinimumLength = 8, ErrorMessage = "Je {0} moet minstens {2} en hoogstens {1} tekens bevatten")]
         [Display(Name = "Wachtwoord")]
         [DataType(DataType.Password)]
         public string Paswoord { get; set; }
+
+        [Compare("Paswoord", ErrorMessage = "Beide passwoorden moeten hetzelfde zijn")]
+        [Display(Name = "Herhaal Wachtwoord")]
+        [DataType(DataType.Password)]
+        public string HerhaalPaswoord { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Gelieve een geboortedatum op te geven")]
         [MinAgeAttribute(ErrorMessage = "De minimum leeftijd bedraagt 18 jaar")]

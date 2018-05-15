@@ -216,6 +216,8 @@
     <Content Include="Views\Persoon\Index.cshtml" />
     <Content Include="Views\Persoon\Verwijder.cshtml" />
     <Content Include="Views\Persoon\Toevoegen.cshtml" />
+    <Content Include="Views\Persoon\Wijzigen.cshtml" />
+    <Content Include="Views\Persoon\_PersoonForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
