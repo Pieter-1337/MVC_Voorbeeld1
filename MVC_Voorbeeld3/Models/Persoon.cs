@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using MVC_Voorbeeld3.CustomValidation;
 
 namespace MVC_Voorbeeld3.Models
 {
@@ -19,7 +20,7 @@ namespace MVC_Voorbeeld3.Models
 
         public int Score { get; set; }
 
-
+        [Range(1, 5000, ErrorMessage = "De wedde moet tussen 1 en 5000 liggen")]
         [DisplayFormat(DataFormatString = "{0:#,##0.00}")]
         public decimal Wedde { get; set; }
 
@@ -29,6 +30,7 @@ namespace MVC_Voorbeeld3.Models
         public string Paswoord { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Gelieve een geboortedatum op te geven")]
+        [MinAgeAttribute(ErrorMessage = "De minimum leeftijd bedraagt 18 jaar")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime Geboren { get; set; }

@@ -35,6 +35,7 @@
             <div class="form-group">
                 @Html.LabelFor(m => m.Wedde)
                 @Html.TextBoxFor(m => m.Wedde, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Wedde, "" , new { @class = "alert-danger" })
             </div>
 
             <div class="form-group">
@@ -76,7 +77,7 @@
             <br />
             <div class="pad-top">
                 <button type="submit" class="btn btn-success btn-lg margin-right">
-                    <span class="glyphicon glyphicon-save"></span> Verstuur
+                    <span class="glyphicon glyphicon-save"></span> Toevoegen
                 </button>
                 <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
                     <span class="glyphicon glyphicon-remove"></span> Cancel

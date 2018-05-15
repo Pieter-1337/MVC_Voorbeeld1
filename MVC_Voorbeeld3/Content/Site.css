@@ -23,6 +23,8 @@ textarea {
     max-width: 280px;
 }
 
-.Datepicker-bg{
-    background-color: white !important;
+#ui-datepicker-div{
+    background-color: whitesmoke !important;
+    border: 1px solid black;
+    width: inherit;
 }
