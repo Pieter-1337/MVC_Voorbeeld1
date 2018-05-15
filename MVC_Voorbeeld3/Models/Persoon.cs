@@ -36,8 +36,9 @@ namespace MVC_Voorbeeld3.Models
         public string HerhaalPaswoord { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Gelieve een geboortedatum op te geven")]
-        [MinAgeAttribute(ErrorMessage = "De minimum leeftijd bedraagt 18 jaar")]
-        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+        //[MinAgeAttribute(ErrorMessage = "De minimum leeftijd bedraagt 18 jaar")]
+        //[System.Web.Mvc.Remote("ValidateDOB", "Persoon")]
+        [DisplayFormat(DataFormatString = "{0:M/d/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime Geboren { get; set; }
 

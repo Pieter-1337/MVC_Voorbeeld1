@@ -2,6 +2,7 @@
 using MVC_Voorbeeld3.Services;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -83,6 +84,23 @@ namespace MVC_Voorbeeld3.Controllers
             else
             {
                 return View(persoon);
+            }
+        }
+
+        public JsonResult ValidateDOB(string Geboren)
+        {
+            DateTime parsedDOB;
+            if(!DateTime.TryParseExact(Geboren, "{0:d}", CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDOB))
+            {
+                return Json("Gelieve een geldige datum in te voeren (m/d/jjjj)! ", JsonRequestBehavior.AllowGet);
+            }
+            else if((DateTime.Now.Year - parsedDOB.Year) >= 18)
+            {
+                return Json("Minimum leeft bedraagt 18 jaar", JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
             }
         }
     }

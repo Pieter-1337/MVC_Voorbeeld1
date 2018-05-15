@@ -2,6 +2,9 @@
 @model MVC_Voorbeeld3.Models.Persoon
 @using MVC_Voorbeeld3.Models;
 
+@{
+    HtmlHelper.ClientValidationEnabled = true;
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = true; }
 
 @if (!ViewData.ModelState.IsValid)
 {
@@ -48,7 +51,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.Geboren)
+                @Html.LabelFor(m => m.Geboren) m/d/yyyy
                 @Html.TextBoxFor(m => m.Geboren, "{0:d}", new { @class = "form-control datepicker" })
                 @Html.ValidationMessageFor(m => m.Geboren, "", new { @class = "alert-danger" })
             </div>

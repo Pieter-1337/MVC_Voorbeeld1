@@ -39,13 +39,22 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @* Underlying 2 scripts were both obtained with nuget package manager as Jquery validation and Microsoft unobtruvsive jquery validion
+        They are used for client side validation*@
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.date.js"></script> @*Steeds deze file bijvoegen om problemen met date validatie te vermijden !*@
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @* Underlying script makes validation field mark with checkmark or x mark if valid or unvalid! *@
+    <script src="~/Scripts/jquery.bootstrap.validate.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
     <script>
         $('input.datepicker').datepicker({ format: 'm/d/yyyy' });
     </script>
-    @RenderSection("scripts", required: false)
+    @*RenderSection("scripts", required: false)*@
 </body>
 </html>
